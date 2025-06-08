@@ -3,155 +3,1134 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EduPort School - Smart Digital Solutions for Schools</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
-    <link rel="stylesheet" href="style.css">
+    <title>East Land School - Excellence in Education</title>
+    <style>
+        /* CSS Variables for colors */
+        :root {
+            --primary: #1a5276;
+            --secondary: #d35400;
+            --light: #f8f9fa;
+            --dark: #343a40;
+            --white: #ffffff;
+            --gray: #6c757d;
+        }
+
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary);
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: var(--secondary);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            font-weight: 600;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background-color: #154360;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background-color: var(--secondary);
+            color: var(--white);
+        }
+
+        .btn-secondary:hover {
+            background-color: #ba4a00;
+            transform: translateY(-2px);
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .section {
+            padding: 4rem 0;
+        }
+
+        .section-title {
+            position: relative;
+            margin-bottom: 2rem;
+            padding-bottom: 0.5rem;
+            text-align: center;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--secondary);
+        }
+
+        .bg-light {
+            background-color: var(--light);
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 1rem;
+            border-radius: 4px;
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .nav-desktop {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-desktop ul {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-desktop li {
+            margin-left: 1.5rem;
+        }
+
+        .nav-desktop a {
+            font-weight: 600;
+            padding: 0.5rem 0;
+            position: relative;
+        }
+
+        .nav-desktop a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--secondary);
+            transition: width 0.3s;
+        }
+
+        .nav-desktop a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                        url('https://via.placeholder.com/1920x1080') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            color: var(--white);
+            text-align: center;
+            margin-top: 72px; /* Account for fixed header */
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            color: var(--white);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .hero-btns {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+        }
+
+        .about-image {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Programs Section */
+        .programs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .program-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+        }
+
+        .program-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .program-icon {
+            font-size: 3rem;
+            color: var(--secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .program-card h3 {
+            margin-bottom: 1rem;
+        }
+
+        /* Events Section */
+        .events-calendar {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .event-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .event-date {
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 0.75rem;
+            border-radius: 4px;
+            text-align: center;
+            margin-right: 1.5rem;
+            min-width: 60px;
+        }
+
+        .event-date .day {
+            font-size: 1.5rem;
+            font-weight: bold;
+            display: block;
+            line-height: 1;
+        }
+
+        .event-date .month {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            display: block;
+        }
+
+        .event-info h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .event-info p {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        /* Gallery Section */
+        .gallery-section {
+            background-color: var(--white);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            aspect-ratio: 1 / 1;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 0.5rem;
+            transform: translateY(100%);
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover .gallery-caption {
+            transform: translateY(0);
+        }
+
+        /* Testimonials Section */
+        .testimonials-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .testimonial-card {
+            background-color: var(--white);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            font-size: 5rem;
+            position: absolute;
+            top: 0;
+            left: 1rem;
+            color: rgba(26, 82, 118, 0.1);
+            line-height: 1;
+        }
+
+        .testimonial-content {
+            margin-bottom: 1.5rem;
+            font-style: italic;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 1rem;
+            object-fit: cover;
+        }
+
+        .author-info h4 {
+            margin-bottom: 0.25rem;
+            color: var(--primary);
+        }
+
+        .author-info p {
+            font-size: 0.9rem;
+            color: var(--gray);
+            margin-bottom: 0;
+        }
+
+        /* Blog Section */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .blog-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .blog-image {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .blog-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .blog-card:hover .blog-image img {
+            transform: scale(1.05);
+        }
+
+        .blog-content {
+            padding: 1.5rem;
+        }
+
+        .blog-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: var(--gray);
+            margin-bottom: 1rem;
+        }
+
+        .blog-card h3 {
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+        }
+
+        .blog-excerpt {
+            margin-bottom: 1.5rem;
+            color: var(--gray);
+        }
+
+        .read-more {
+            font-weight: 600;
+            color: var(--secondary);
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .read-more::after {
+            content: '→';
+            margin-left: 0.5rem;
+            transition: margin-left 0.3s;
+        }
+
+        .read-more:hover::after {
+            margin-left: 1rem;
+        }
+
+        /* Admission Section */
+        .admission-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            align-items: center;
+            margin-top: 2rem;
+        }
+
+        .admission-image {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .admission-content h3 {
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .admission-content ul {
+            margin-bottom: 2rem;
+            padding-left: 1.5rem;
+        }
+
+        .admission-content li {
+            margin-bottom: 0.75rem;
+        }
+
+        /* Contact Section */
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+        }
+
+        .contact-info {
+            margin-bottom: 2rem;
+        }
+
+        .contact-info h3 {
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-details {
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-details p {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.75rem;
+        }
+
+        .contact-details i {
+            margin-right: 0.75rem;
+            color: var(--secondary);
+            width: 20px;
+            text-align: center;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary);
+            color: var(--white);
+            border-radius: 50%;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background-color: var(--secondary);
+            transform: translateY(-3px);
+        }
+
+        .contact-form .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-form label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .contact-form textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: var(--white);
+            padding: 3rem 0 1.5rem;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-logo {
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links h3 {
+            color: var(--white);
+            margin-bottom: 1.5rem;
+            font-size: 1.25rem;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+
+        /* Mobile Navigation */
+        .nav-mobile {
+            position: fixed;
+            top: 72px;
+            left: 0;
+            width: 100%;
+            height: calc(100vh - 72px);
+            background-color: var(--white);
+            transform: translateX(-100%);
+            transition: transform 0.3s ease-in-out;
+            z-index: 999;
+            overflow-y: auto;
+            padding: 2rem;
+        }
+
+        .nav-mobile.active {
+            transform: translateX(0);
+        }
+
+        .nav-mobile ul {
+            list-style: none;
+        }
+
+        .nav-mobile li {
+            margin-bottom: 1.5rem;
+        }
+
+        .nav-mobile a {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--dark);
+            display: block;
+            padding: 0.5rem 0;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .nav-desktop {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .hero-btns .btn {
+                width: 100%;
+                max-width: 300px;
+                margin-bottom: 1rem;
+            }
+
+            .hero-btns .btn:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .section {
+                padding: 3rem 0;
+            }
+
+            .section-title {
+                font-size: 1.75rem;
+            }
+
+            .logo-text {
+                font-size: 1.25rem;
+            }
+
+            .logo-icon {
+                width: 40px;
+                height: 40px;
+            }
+        }
+
+        /* Accessibility */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+
+        a:focus, button:focus, input:focus, textarea:focus {
+            outline: 2px solid var(--secondary);
+            outline-offset: 2px;
+        }
+    </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container">
-            <a href="#" class="logo">EduPort School</a>
-            <div class="nav-links">
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#features">Features</a>
-                <a href="#gallery">Gallery</a>
-                <a href="#contact">Contact</a>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <div class="logo-icon">ELS</div>
+                <div class="logo-text">East Land School</div>
             </div>
-            <button class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+            
+            <nav class="nav-desktop">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#programs">Programs</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#events">Events</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#admission">Admission</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="https://demo.eduport.com.ng" target="_blank" class="btn btn-secondary">Login</a></li>
+                </ul>
+            </nav>
+            
+            <button class="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false">
+                ☰
             </button>
         </div>
-    </nav>
+        
+        <nav class="nav-mobile">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#programs">Programs</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#admission">Admission</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="https://demo.eduport.com.ng" target="_blank" class="btn btn-secondary">Login</a></li>
+            </ul>
+        </nav>
+    </header>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="container">
-            <div class="hero-content" data-aos="fade-up">
-                <h1>Empowering Schools With Smart Digital Solutions</h1>
-                <p>Join EduPort and take your school online with ease.</p>
-                <a href="#contact" class="btn">Get Started</a>
+        <div class="hero-content">
+            <h1>Welcome to East Land School</h1>
+            <p>Providing quality education and nurturing future leaders in Nigeria since 1995</p>
+            <div class="hero-btns">
+                <a href="#about" class="btn btn-primary">Learn More</a>
+                <a href="https://demo.eduport.com.ng" target="_blank" class="btn btn-secondary">Login Portal</a>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="about">
+    <section id="about" class="section">
         <div class="container">
-            <h2 data-aos="fade-up">About EduPort School</h2>
+            <h2 class="section-title">About Our School</h2>
             <div class="about-content">
-                <div class="about-text" data-aos="fade-right">
-                    <p>EduPort School provides a comprehensive digital platform designed specifically for educational institutions. Our solution helps schools streamline operations, enhance communication, and improve the learning experience.</p>
-                    <p>With EduPort, you can manage student records, publish results online, communicate with parents, and much more - all through a secure, user-friendly interface.</p>
-                    <p>Our platform is trusted by hundreds of schools worldwide to deliver reliable, scalable digital solutions tailored to educational needs.</p>
+                <div class="about-text">
+                    <p>East Land School was founded in 1995 with a vision to provide exceptional education that combines academic excellence with strong moral values. Located in Lagos, Nigeria, we are committed to nurturing well-rounded individuals who will contribute positively to our society.</p>
+                    <p>Our mission is to empower students with knowledge, skills, and character needed to excel in an ever-changing world. We foster critical thinking, creativity, and a lifelong love for learning in a supportive and inclusive environment.</p>
+                    <p>At East Land School, we celebrate Nigeria's rich cultural heritage while preparing our students to be global citizens. Our values of integrity, respect, excellence, and community guide everything we do.</p>
                 </div>
-                <div class="about-image" data-aos="fade-left">
-                    <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Students using digital devices">
+                <div class="about-image">
+                    <img src="https://via.placeholder.com/600x400" alt="Students at East Land School">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section id="features" class="features">
+    <!-- Programs Section -->
+    <section id="programs" class="section bg-light">
         <div class="container">
-            <h2 data-aos="fade-up">What We Offer</h2>
-            <div class="features-grid">
-                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
-                    <i class="fas fa-graduation-cap"></i>
-                    <h3>Student Portal</h3>
-                    <p>Secure access for students to view assignments, grades, and school announcements.</p>
+            <h2 class="section-title">Our Programs</h2>
+            <div class="programs-grid">
+                <div class="program-card">
+                    <div class="program-icon">📚</div>
+                    <h3>Primary Education</h3>
+                    <p>Our primary program provides a strong foundation in core subjects while nurturing curiosity and creativity. We focus on literacy, numeracy, and social skills development.</p>
                 </div>
-                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
-                    <i class="fas fa-chart-line"></i>
-                    <h3>Result Management</h3>
-                    <p>Easily manage and publish student results with customizable report cards.</p>
+                <div class="program-card">
+                    <div class="program-icon">🎓</div>
+                    <h3>Secondary Education</h3>
+                    <p>Our secondary program prepares students for WAEC, NECO, and JAMB examinations while offering a broad curriculum that includes sciences, arts, and technology.</p>
                 </div>
-                <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
-                    <i class="fas fa-money-bill-wave"></i>
-                    <h3>Online Payments</h3>
-                    <p>Secure payment processing for fees, events, and other school expenses.</p>
-                </div>
-                <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
-                    <i class="fas fa-bullhorn"></i>
-                    <h3>School News</h3>
-                    <p>Publish news and announcements to keep parents and students informed.</p>
+                <div class="program-card">
+                    <div class="program-icon">⚽</div>
+                    <h3>Extracurricular Activities</h3>
+                    <p>We offer diverse extracurricular programs including sports, music, debate, and STEM clubs to help students discover and develop their talents and interests.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Gallery Section -->
-    <section id="gallery" class="gallery">
+    <section id="gallery" class="section gallery-section">
         <div class="container">
-            <h2 data-aos="fade-up">School Moments</h2>
+            <h2 class="section-title">School Gallery</h2>
             <div class="gallery-grid">
-                <div class="gallery-item" data-aos="zoom-in">
-                    <img src="https://images.unsplash.com/photo-1546410531-bb4caa6b424d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" alt="Classroom">
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/500x500" alt="Students in classroom">
+                    <div class="gallery-caption">Classroom Learning</div>
                 </div>
-                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
-                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" alt="Students working">
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/500x500" alt="Science lab experiment">
+                    <div class="gallery-caption">Science Lab</div>
                 </div>
-                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="200">
-                    <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Teacher with students">
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/500x500" alt="Sports day event">
+                    <div class="gallery-caption">Sports Day</div>
                 </div>
-                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="300">
-                    <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Digital learning">
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/500x500" alt="Cultural day celebration">
+                    <div class="gallery-caption">Cultural Day</div>
                 </div>
-                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="400">
-                    <img src="https://images.unsplash.com/photo-1524179091875-bf99a9a6af57?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Science experiment">
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/500x500" alt="School library">
+                    <div class="gallery-caption">School Library</div>
                 </div>
-                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="500">
-                    <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1472&q=80" alt="School building">
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/500x500" alt="Graduation ceremony">
+                    <div class="gallery-caption">Graduation Day</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Lightbox Modal -->
-    <div id="lightbox" class="lightbox">
-        <span class="close-lightbox">&times;</span>
-        <img class="lightbox-content" id="lightbox-img">
-        <div class="caption"></div>
-    </div>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
+    <!-- Events Section -->
+    <section id="events" class="section">
         <div class="container">
-            <h2 data-aos="fade-up">Contact Us</h2>
-            <div class="contact-content">
-                <div class="contact-info" data-aos="fade-right">
-                    <h3>Get in Touch</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> 123 Education Street, Digital City, DC 10001</p>
-                    <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
-                    <p><i class="fas fa-envelope"></i> info@eduportschool.com</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <h2 class="section-title">Upcoming Events</h2>
+            <div class="events-calendar">
+                <div class="event-card">
+                    <div class="event-date">
+                        <span class="day">15</span>
+                        <span class="month">Jun</span>
+                    </div>
+                    <div class="event-info">
+                        <h3>Open Day</h3>
+                        <p>9:00 AM - 3:00 PM</p>
+                        <p>Tour our facilities and meet our teachers</p>
                     </div>
                 </div>
-                <div class="contact-form" data-aos="fade-left">
-                    <form id="contactForm">
+                <div class="event-card">
+                    <div class="event-date">
+                        <span class="day">22</span>
+                        <span class="month">Jun</span>
+                    </div>
+                    <div class="event-info">
+                        <h3>Parent-Teacher Meeting</h3>
+                        <p>10:00 AM - 2:00 PM</p>
+                        <p>Discuss your child's progress with teachers</p>
+                    </div>
+                </div>
+                <div class="event-card">
+                    <div class="event-date">
+                        <span class="day">05</span>
+                        <span class="month">Jul</span>
+                    </div>
+                    <div class="event-info">
+                        <h3>Cultural Day</h3>
+                        <p>All Day Event</p>
+                        <p>Celebrating Nigeria's diverse cultures</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">What Parents Say</h2>
+            <div class="testimonials-container">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>East Land School has provided my children with an excellent education and a nurturing environment. The teachers are dedicated and the facilities are top-notch.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://via.placeholder.com/100x100" alt="Mrs. Adebayo" class="author-avatar">
+                        <div class="author-info">
+                            <h4>Mrs. Adebayo</h4>
+                            <p>Parent of Primary 4 Student</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>I'm impressed with how the school balances academic rigor with character development. My son has grown tremendously in confidence and knowledge.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://via.placeholder.com/100x100" alt="Mr. Johnson" class="author-avatar">
+                        <div class="author-info">
+                            <h4>Mr. Johnson</h4>
+                            <p>Parent of SS2 Student</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>The extracurricular programs at East Land have helped my daughter discover her passion for robotics. The school truly develops the whole child.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://via.placeholder.com/100x100" alt="Dr. Okonkwo" class="author-avatar">
+                        <div class="author-info">
+                            <h4>Dr. Okonkwo</h4>
+                            <p>Parent of JSS3 Student</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="section">
+        <div class="container">
+            <h2 class="section-title">Latest News</h2>
+            <div class="blog-grid">
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://via.placeholder.com/600x400" alt="School science fair">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span>June 5, 2023</span>
+                            <span>Science</span>
+                        </div>
+                        <h3>Students Win Regional Science Competition</h3>
+                        <p class="blog-excerpt">Our students recently took top honors at the Lagos State Science Fair with their innovative renewable energy project.</p>
+                        <a href="#" class="read-more">Read More</a>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://via.placeholder.com/600x400" alt="Teacher training">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span>May 22, 2023</span>
+                            <span>Academics</span>
+                        </div>
+                        <h3>Teachers Complete Advanced Training Program</h3>
+                        <p class="blog-excerpt">Our faculty recently completed a specialized training program in innovative teaching methodologies.</p>
+                        <a href="#" class="read-more">Read More</a>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://via.placeholder.com/600x400" alt="School building">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span>April 15, 2023</span>
+                            <span>Facilities</span>
+                        </div>
+                        <h3>New Computer Lab Opens This Term</h3>
+                        <p class="blog-excerpt">Our state-of-the-art computer lab with 50 workstations is now open for student use.</p>
+                        <a href="#" class="read-more">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Admission Section -->
+    <section id="admission" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">Admission Process</h2>
+            <div class="admission-container">
+                <div class="admission-image">
+                    <img src="https://via.placeholder.com/600x400" alt="Happy students at East Land School">
+                </div>
+                <div class="admission-content">
+                    <h3>Join Our Community of Learners</h3>
+                    <p>We welcome applications from families who share our commitment to academic excellence and character development. Our admission process is designed to ensure the best fit for both students and the school.</p>
+                    
+                    <h4>Admission Requirements:</h4>
+                    <ul>
+                        <li>Completed application form</li>
+                        <li>Previous school records (for transfer students)</li>
+                        <li>Birth certificate or sworn declaration of age</li>
+                        <li>Medical report from a licensed physician</li>
+                        <li>Passport photographs</li>
+                    </ul>
+                    
+                    <p>Applications are accepted year-round, but we recommend applying early as spaces are limited.</p>
+                    <a href="#" class="btn btn-primary">Apply Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    <div class="contact-details">
+                        <p><span>📍</span> 24 Education Road, Victoria Island, Lagos, Nigeria</p>
+                        <p><span>📞</span> +234 812 345 6789</p>
+                        <p><span>✉️</span> info@eastlandschool.edu.ng</p>
+                    </div>
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><span>f</span></a>
+                        <a href="#" aria-label="Twitter"><span>t</span></a>
+                        <a href="#" aria-label="Instagram"><span>ig</span></a>
+                        <a href="#" aria-label="LinkedIn"><span>in</span></a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="newsletterForm">
                         <div class="form-group">
-                            <input type="text" id="name" placeholder="Your Name" required>
-                            <span class="error-message" id="name-error"></span>
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required aria-required="true">
                         </div>
                         <div class="form-group">
-                            <input type="email" id="email" placeholder="Your Email" required>
-                            <span class="error-message" id="email-error"></span>
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required aria-required="true">
                         </div>
                         <div class="form-group">
-                            <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
-                            <span class="error-message" id="message-error"></span>
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" required aria-required="true"></textarea>
                         </div>
-                        <button type="submit" class="btn">Send Message</button>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
                     </form>
                 </div>
             </div>
@@ -159,13 +1138,121 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer>
         <div class="container">
-            <p>EduPort School &copy; <span id="year"></span>. All Rights Reserved.</p>
+            <div class="footer-container">
+                <div class="footer-links">
+                    <div class="footer-logo">
+                        <div class="logo">
+                            <div class="logo-icon">ELS</div>
+                            <div class="logo-text" style="color: var(--white);">East Land School</div>
+                        </div>
+                    </div>
+                    <p>Providing quality education in Nigeria for over 25 years.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#programs">Programs</a></li>
+                        <li><a href="#admission">Admission</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Academics</h3>
+                    <ul>
+                        <li><a href="#programs">Primary School</a></li>
+                        <li><a href="#programs">Secondary School</a></li>
+                        <li><a href="#programs">Extracurricular</a></li>
+                        <li><a href="#events">School Calendar</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 East Land School. All Rights Reserved.</p>
+            </div>
         </div>
     </footer>
 
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script src="script.js"></script>
+    <script>
+        // Mobile Navigation Toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navMobile = document.querySelector('.nav-mobile');
+        
+        mobileMenuBtn.addEventListener('click', function() {
+            navMobile.classList.toggle('active');
+            const isExpanded = this.getAttribute('aria-expanded') === 'true';
+            this.setAttribute('aria-expanded', !isExpanded);
+        });
+        
+        // Close mobile menu when clicking a link
+        const navLinks = document.querySelectorAll('.nav-mobile a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMobile.classList.remove('active');
+                mobileMenuBtn.setAttribute('aria-expanded', 'false');
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    const headerHeight = document.querySelector('header').offsetHeight;
+                    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Form submission handling (no actual backend)
+        const form = document.getElementById('newsletterForm');
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! We will get back to you soon.');
+            form.reset();
+        });
+        
+        // Highlight current section in navigation
+        window.addEventListener('scroll', function() {
+            const scrollPosition = window.scrollY;
+            const headerHeight = document.querySelector('header').offsetHeight;
+            
+            document.querySelectorAll('section').forEach(section => {
+                const sectionTop = section.offsetTop - headerHeight - 50;
+                const sectionHeight = section.offsetHeight;
+                const sectionId = section.getAttribute('id');
+                
+                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                    document.querySelectorAll('.nav-desktop a, .nav-mobile a').forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === `#${sectionId}`) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
